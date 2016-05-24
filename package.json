@@ -1,0 +1,9 @@
+{
+  "name": "learn-grunt",
+  "version": "1.0.0",
+  "description": "learning grunt",
+  "author": "cartifon",
+  "devDependencies": {
+    "grunt": "~1.0.1"
+  }
+}
