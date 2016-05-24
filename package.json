@@ -4,6 +4,7 @@
   "description": "learning grunt",
   "author": "cartifon",
   "devDependencies": {
-    "grunt": "~1.0.1"
+    "grunt": "~1.0.1",
+    "grunt-contrib-cssmin": "~1.0.1"
   }
 }
