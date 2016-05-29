@@ -38,6 +38,20 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        watch: {
+            less: {
+                files: ['less/*.less'],
+                tasks: ['less'],
+                options: {
+                    spawn: false,
+                    livereload: true
+                }
+            },
+            js: {
+                files: ['javascript/*.js'],
+                tasks: ['jshint']
+            }
+        },
         concat: {
             dist: {
                 files: {
@@ -48,6 +62,7 @@ module.exports = function(grunt) {
     });
 
     // grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     // grunt.loadNpmTasks('grunt-contrib-csslint');
