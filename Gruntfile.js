@@ -28,6 +28,30 @@ module.exports = function(grunt) {
                 compress: true
             }
         },
+        imagemin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'images/src/',
+                    src: ['**/*.{jpg,gif,png}'],
+                    dest: 'images/dist/'
+                }]
+            }
+        },
+        watch: {
+            less: {
+                files: ['less/*.less'],
+                tasks: ['less'],
+                options: {
+                    spawn: false,
+                    livereload: true
+                }
+            },
+            js: {
+                files: ['javascript/*.js'],
+                tasks: ['jshint']
+            }
+        },
         concat: {
             dist: {
                 files: {
@@ -38,6 +62,8 @@ module.exports = function(grunt) {
     });
 
     // grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     // grunt.loadNpmTasks('grunt-contrib-csslint');
     // grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -50,6 +76,7 @@ module.exports = function(grunt) {
         // 'cssmin', // minifica os arquivos
         // 'autoprefixer' // prefixa as classes CSS para vários browsers
         'less',
+        'imagemin',
         'concat' // concatena os arquivos js
     ]);
 };
